@@ -1,0 +1,6 @@
+{
+  "name": "CARVE COFFEE BAR | قهوة كارڤ",
+  "description": "Premium specialty coffee bar and architectural sanctuary in Al Wurud, Riyadh. Experience specialty coffee, serene atmosphere, and artisanal craft.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

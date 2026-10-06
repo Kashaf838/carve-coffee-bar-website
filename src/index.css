@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Italiana', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-arabic: 'Alexandria', sans-serif;
+
+    /* LIGHT THEME: "Day at CARVE" - Bright, Travertine Sand, Airy, Editorial */
+    --color-canvas: #f7f4ed;
+    --color-canvas-rgb: 247, 244, 237;
+    --color-surface: #efe9df;
+    --color-surface-elevated: #ffffff;
+    --color-surface-subtle: #f0ebe0;
+    --color-border: rgba(45, 38, 30, 0.1);
+    --color-border-hover: rgba(45, 38, 30, 0.22);
+    --color-text-primary: #191715;
+    --color-text-secondary: #595247;
+    --color-text-muted: #8c8273;
+    --color-accent: #9c7e5a;
+    --color-accent-hover: #836746;
+    --color-accent-subtle: rgba(156, 126, 90, 0.12);
+    --color-nav-bg: rgba(247, 244, 237, 0.88);
+    --grain-opacity: 0.035;
+    --hero-scrim-1: rgba(247, 244, 237, 0.94);
+    --hero-scrim-2: rgba(247, 244, 237, 0.6);
+    --hero-scrim-3: rgba(247, 244, 237, 0.35);
+  }
+
+  /* DARK THEME: "CARVE After Dark" - Cinematic, Deep Obsidian, Intimate */
+  html.dark {
+    --color-canvas: #0c0b0d;
+    --color-canvas-rgb: 12, 11, 13;
+    --color-surface: #141318;
+    --color-surface-elevated: #1a1920;
+    --color-surface-subtle: #1e1d24;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-border-hover: rgba(255, 255, 255, 0.2);
+    --color-text-primary: #f5f1eb;
+    --color-text-secondary: #b8afa3;
+    --color-text-muted: #787165;
+    --color-accent: #cbb59d;
+    --color-accent-hover: #decbbb;
+    --color-accent-subtle: rgba(203, 181, 157, 0.12);
+    --color-nav-bg: rgba(12, 11, 13, 0.88);
+    --grain-opacity: 0.04;
+    --hero-scrim-1: rgba(12, 11, 13, 0.95);
+    --hero-scrim-2: rgba(12, 11, 13, 0.6);
+    --hero-scrim-3: rgba(12, 11, 13, 0.4);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    transition: background-color 450ms cubic-bezier(0.16, 1, 0.3, 1), color 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-canvas);
+    color: var(--color-text-primary);
+    overflow-x: hidden;
+    transition: background-color 450ms cubic-bezier(0.16, 1, 0.3, 1), color 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  [dir="rtl"] {
+    font-family: var(--font-arabic), var(--font-sans);
+  }
+}
+
+.font-display {
+  font-family: var(--font-serif);
+}
+
+.font-arabic {
+  font-family: var(--font-arabic);
+}
+
+/* Theme utility mappings */
+.bg-theme-canvas {
+  background-color: var(--color-canvas);
+}
+.bg-theme-surface {
+  background-color: var(--color-surface);
+}
+.bg-theme-elevated {
+  background-color: var(--color-surface-elevated);
+}
+.bg-theme-subtle {
+  background-color: var(--color-surface-subtle);
+}
+
+.text-theme-primary {
+  color: var(--color-text-primary);
+}
+.text-theme-secondary {
+  color: var(--color-text-secondary);
+}
+.text-theme-muted {
+  color: var(--color-text-muted);
+}
+.text-theme-accent {
+  color: var(--color-accent);
+}
+
+.border-theme {
+  border-color: var(--color-border);
+}
+.border-theme-hover:hover {
+  border-color: var(--color-border-hover);
+}
+
+/* Subtle luxury grain effect */
+.bg-grain {
+  background-image: radial-gradient(rgba(128, 128, 128, var(--grain-opacity)) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Hide scrollbar for clean luxury horizontal galleries */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* View transitions for seamless theme expansion */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 9999;
+}
